@@ -1,2 +1,13 @@
-<h1>Boards#new</h1>
-<p>Find me in app/views/boards/new.html.erb</p>
+<h1>Add Board</h1>
+<%= form_with(model: @board, local: true, class: "ui form" ) do |f| %>
+  <div class="field">
+    <%= f.label :Work %><br />
+    <%= f.text_field :work, required: false, placeholder: "work " %><br />
+  </div>
+  <br />
+  <div class="field">
+    <%= f.label :chores %><br />
+    <%= f.text_field :chores, required: false, placeholder: "Chores " %><br />
+  </div><br />
+  <%= f.submit nil, class: "ui blue button inverted" %>
+<% end %>

@@ -1,3 +1,15 @@
-<h1>Boards#index</h1>
-<%= button_to "Log Out", destroy_user_session_path, method: :delete %>
+<h1>Boards</h1>
+<%= link_to "Add Board", new_board_path %>
 <h2>Welcome <%= current_user.first_name %></h2>
+<hr />
+<h2><%= @boards.length <= 0 ? "No Boards" : ""%><h2 />
+<ul>
+  <% @boards.each do |board| %>
+    <li>
+      <%= link_to board.work, board %>
+      <%= link_to board.chores, board %>
+    </li>
+    <% end %>
+</ul>
+
+

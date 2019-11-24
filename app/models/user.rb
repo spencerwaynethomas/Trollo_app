@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
          has_many :lists
          has_many :boards, through: :lists
+         
+         def full_name
+          "#{self.first_name} #{self.last_name}"
+        end
 end
