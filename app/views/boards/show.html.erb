@@ -1,2 +1,16 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<h1><%= current_user.full_name %></h1>
+<hr />
+<h2>Boards</h2>
+<ul>
+  <% current_user.boards.each do |board| %>
+    <li><br />
+      <%= link_to board.work, board %><br />
+      <br />
+      <%= link_to board.chores, board %><br />
+    </li>
+  <% end %>
+</ul>
+<br />
+<br />
+<br />
+<%= link_to 'Delete User', curent_user, method: :delete, class: "ui red button inverted" %>

@@ -1,12 +1,15 @@
-<h1>Boards</h1>
-<%= link_to "Add Board", new_board_path %>
 <h2>Welcome <%= current_user.first_name %></h2>
 <hr />
+<h1>Boards</h1>
+<%= link_to "Add Board", new_board_path %>
+<br />
 <h2><%= @boards.length <= 0 ? "No Boards" : ""%><h2 />
 <ul>
   <% @boards.each do |board| %>
     <li>
-      <%= link_to board.work, board %>
+    
+      <%= link_to board.work, board %><br /><br /><br />
+      <hr />
       <%= link_to board.chores, board %>
     </li>
     <% end %>
